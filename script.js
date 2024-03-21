@@ -2,6 +2,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebas
 import { getFirestore, collection, query, where, orderBy, getDocs } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js'
 
 const pautadodia = document.querySelector('#pautadodia')
+const dataDeHoje = document.querySelector('#dataDeHoje')
 
 const firebaseConfig = {
     apiKey: 'AIzaSyBN-qpVqbeeU7IMM-sdLPfF5rVEQlI7LZM',
@@ -21,6 +22,13 @@ let jobs = {
     renan: [], rodolfo: [], thiago: [],
     victoria: []
 }
+
+const dataHoje = () => {
+    const currentData = new Date().toLocaleDateString('pt-BR')
+    return currentData
+}
+
+dataDeHoje.innerHTML += `<h2 class="dataDeHoje">Pauta do dia: ${dataHoje()}</h2>`
 
 const createJobList = (jobsData) => {
     let html = ''
@@ -118,9 +126,6 @@ const fetcherData = async () => {
             `
             pautadodia.innerHTML += responsavelHTML
         })
-
-
-
 
     } catch (error) {
         console.error(`Erro ao buscar os dados. ${error}`)

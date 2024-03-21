@@ -2,12 +2,29 @@
 
 body{
     font-family: 'Roboto';
-    
+}
+
+.content{
+    padding: 25px 20px 0 20px;
+}
+
+#dataDeHoje{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dataDeHoje{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
 }
 
 .tabelaContent{
     /* display: flex;
-    justify-content: center;
+    justify-content: center
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 20px;
@@ -29,6 +46,7 @@ body{
     color: #0f172a;
     text-align: center;
     box-shadow: 4px 5px 5px #9ca3af80;
+    animation: fadeIn 500ms cubic-bezier(0.175, 0.885, 0.32, 1.05);
 }
 
 .cardTitulo{
@@ -67,5 +85,17 @@ body{
 @media (max-width:500px) {
     .tabelaContent{
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
     }
 }

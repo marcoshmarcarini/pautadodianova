@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+body{
+    font-family: 'Roboto';
+    
+}
+
+.tabelaContent{
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 50px;
+}
+
+.tCard{
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+    background-color: #cbd5e1;
+    color: #0f172a;
+    text-align: center;
+    box-shadow: 4px 5px 5px #9ca3af80;
+}
+
+.cardTitulo{
+    background-color: #fb923c;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.cardItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.cardList{
+    padding: 0 10px;
+}
+
+
+@media (max-width:991px){
+    .tabelaContent{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:700px) {
+    .tabelaContent{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:500px) {
+    .tabelaContent{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
